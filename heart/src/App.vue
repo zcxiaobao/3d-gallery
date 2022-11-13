@@ -1,9 +1,7 @@
 
 
 <template>
-  <div class="canvas-container" ref="canvasDom">
-    <!-- <button>123</button> -->
-  </div>
+  <div class="canvas-container" ref="canvasDom"></div>
 </template>
 <script setup>
 import { onMounted, ref } from 'vue';
@@ -21,17 +19,11 @@ const setScale = object => {
     object.position.set(0, 0, 0);
 
     let dist = Math.abs(camera.position.z - object.position.z - mdwid / 2);
-    //console.log('dist值为:' + dist );
     let vFov = (camera.fov * Math.PI) / 180;
-    //console.log('vFov值为:' + vFov );
     let vheight = 2 * Math.tan(vFov * 0.5) * dist;
-    //console.log('vheight值为:' + vheight );
     let fraction = mdhei / vheight;
-    // console.log('fraction值为:' + fraction );
     let finalHeight = height * fraction;
-    //console.log('finalHeight值为:' + finalHeight);
     let finalWidth = (finalHeight * mdlen) / mdhei;
-    //console.log('finalWidth值为:' + finalWidth );
 
     let value1 = width / finalWidth;
     console.log('value1缩放比例值为:' + value1);
