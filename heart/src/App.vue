@@ -35,9 +35,6 @@ const setScale = object => {
     } else {
         object.scale.set(value1, value1, value1);
     }
-
-    // let boxhelper = new THREE.BoxHelper(object, 0xbe1915); //外面红色框
-    // scene.add(boxhelper);
 };
 const setMidden = obj => {
     let box = new THREE.Box3().setFromObject(obj); // 获取模型的包围盒
